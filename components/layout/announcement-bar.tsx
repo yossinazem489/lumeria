@@ -13,7 +13,7 @@ function AnnouncementBar() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % announcementMessages.length);
-    }, 5200);
+    }, 6200);
 
     return () => window.clearInterval(timer);
   }, []);
@@ -21,7 +21,7 @@ function AnnouncementBar() {
   return (
     <MotionDiv
       aria-label="LUMERIA announcements"
-      className="relative flex min-h-32 items-center justify-center border-b border-border/60 px-gutter py-4"
+      className="relative flex h-[28px] items-center justify-center border-b border-border/35 px-gutter"
       initial="hidden"
       animate="visible"
       variants={fadeIn}
@@ -31,9 +31,9 @@ function AnnouncementBar() {
           key={announcementMessages[activeIndex]}
           initial="hidden"
           animate="visible"
-          exit={{ opacity: 0, transition: motionTransitions.fast }}
+          exit={{ opacity: 0, transition: motionTransitions.standard }}
           variants={fadeIn}
-          className="text-center font-sans text-[0.6875rem] uppercase leading-none tracking-[0.08em] text-muted-foreground"
+          className="text-center font-sans text-[0.64rem] uppercase leading-none tracking-[0.11em] text-muted-foreground/80"
         >
           {announcementMessages[activeIndex]}
         </MotionDiv>

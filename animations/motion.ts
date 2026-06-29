@@ -4,14 +4,14 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 const easeInOut = [0.65, 0, 0.35, 1] as const;
 
 export const motionDurations = {
-  fast: 0.25,
-  hover: 0.35,
-  drawer: 0.4,
-  navbar: 0.5,
-  standard: 0.7,
-  page: 0.8,
-  hero: 1.1,
-  ambient: 18,
+  fast: 0.35,
+  hover: 0.45,
+  drawer: 0.55,
+  navbar: 0.65,
+  standard: 0.9,
+  page: 1,
+  hero: 1.35,
+  ambient: 24,
 } as const;
 
 export const motionTransitions = {
@@ -111,12 +111,12 @@ export const heroReveal: Variants = {
 };
 
 export const navbarIntro: Variants = {
-  hidden: { opacity: 0, y: -12, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: -8, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { ...motionTransitions.standard, delay: 0.22, duration: 0.68 },
+    transition: { ...motionTransitions.standard, delay: 0.28, duration: 0.95 },
   },
 };
 
@@ -125,7 +125,7 @@ export const logoReveal: Variants = {
   visible: {
     opacity: 1,
     filter: "blur(0px)",
-    transition: { ...motionTransitions.standard, delay: 0.34, duration: 0.72 },
+    transition: { ...motionTransitions.standard, delay: 0.42, duration: 1.05 },
   },
 };
 
@@ -134,7 +134,7 @@ export const heroImageReveal: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { ...motionTransitions.hero, delay: 1.45, duration: 0.95 },
+    transition: { ...motionTransitions.hero, delay: 1.7, duration: 1.35 },
   },
 };
 
@@ -187,9 +187,9 @@ export const navbarReveal: Variants = {
     transition: motionTransitions.navbar,
   },
   glass: {
-    backgroundColor: "rgba(248, 246, 242, 0.82)",
-    backdropFilter: "blur(18px)",
-    boxShadow: "0 1px 0 rgba(230, 221, 210, 0.72)",
+    backgroundColor: "rgba(248, 246, 242, 0.78)",
+    backdropFilter: "blur(12px)",
+    boxShadow: "0 1px 18px rgba(74, 64, 54, 0.045)",
     transition: motionTransitions.navbar,
   },
 };
@@ -198,8 +198,8 @@ export const staggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.04,
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
     },
   },
 };
