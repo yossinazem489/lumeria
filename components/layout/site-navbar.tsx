@@ -18,6 +18,7 @@ import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Container } from "@/components/ui/container";
 import { Divider } from "@/components/ui/divider";
 import { IconButton } from "@/components/ui/icon-button";
+import { Image } from "@/components/ui/image";
 import { mainNavigation } from "@/config/home";
 
 function SiteNavbar() {
@@ -75,9 +76,16 @@ function SiteNavbar() {
               href="#top"
               aria-label="LUMERIA homepage"
               variants={logoReveal}
-              className="font-serif text-[2.5rem] leading-none tracking-[0.08em] text-foreground/82 transition-colors duration-500 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:text-[3rem]"
+              className="inline-flex w-[12.75rem] items-center opacity-85 transition-opacity duration-500 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:w-[16.25rem]"
             >
-              LUMERIA
+              <Image
+                src="/branding/wordmark.svg"
+                alt="LUMERIA"
+                width={1536}
+                height={268}
+                priority
+                className="h-auto w-full"
+              />
             </MotionA>
 
             <ul className="hidden items-center justify-center gap-64 lg:flex">
@@ -180,9 +188,14 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
     >
       <Container size="wide" className="flex min-h-screen flex-col py-32">
         <div className="flex items-center justify-between">
-          <p className="font-serif text-[2.55rem] leading-none tracking-[0.06em] text-foreground">
-            LUMERIA
-          </p>
+          <Image
+            src="/branding/wordmark.svg"
+            alt="LUMERIA"
+            width={1536}
+            height={268}
+            priority
+            className="w-[12.75rem] opacity-90"
+          />
           <IconButton label="Close search" onClick={onClose}>
             <X aria-hidden="true" className="size-24" strokeWidth={1.4} />
           </IconButton>
